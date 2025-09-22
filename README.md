@@ -91,7 +91,7 @@ I showed early sketches and a mid-prototype to classmates. Feedback included:
 
 ![Today tab screenshot](assets/image-2.png)
 
-![History tab screenshot](assets/image.png)
+![History tab screenshot](assets/image-1.png)
 
 ---
 
