@@ -1,47 +1,118 @@
-# Svelte + Vite
+# P1 - Arvish’s Tracker — Goal Tracking & Journaling UI for User Interface
 
-This template should help get you started developing with Svelte in Vite.
+This template should help get you start.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## 📖 Project Description
 
-## Need an official Svelte framework?
+This is an interactive journaling and goal-tracking interface built with Svelte. The application allows users to log daily activities such as sleep, water intake, yoga, reflections, and moods, while also providing summaries and visual overviews of progress toward personal goals.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+This project was created as part of a User Interface Design course and emphasizes UI clarity, consistency, and user-centered design principles.
 
-## Technical considerations
+---
 
-**Why use this over SvelteKit?**
+## 📝 Design Process
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+- **Interviewing**:
+To shape the design, I conducted short peer interviews with fellow students and friends. A few key needs emerged:
+  - Ability to quickly log core activities (sleep, water, moods).
+  - Desire for reflective prompts (gratitude, journaling).
+  - Preference for simple visuals to see progress without reading too much text.
+  - Interest in customization (choosing what to log, adjusting themes).
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+- **Sketching**:
+Initial sketches explored card-based layouts vs. scrolling dashboards. Based on peer feedback:
+  - I chose a tabbed interface (“Today”, “History”, “Overview”, “Settings”) for clarity.
+  - Daily logging was designed as a single card with multiple input types (checkboxes, ranges, text, file upload).
+  - Overview was simplified into three core metrics (sleep, water, yoga).
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+- **Feedback**:
+I showed early sketches and a mid-prototype to classmates. Feedback included:
+  - “Make it clear when I saved something” → added visual feedback after logging.
+  - “History should be editable” → implemented entry editing.
+  - “Themes would be cool” → allowed switching between orange and blue themes.
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+---
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+## 🖥️ Interface Features
 
-**Why include `.vscode/extensions.json`?**
+### Daily Logging (Today tab)
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+- Feelings: Choose from 12 mood options via checkboxes.
+- Image + Caption: Upload an image of the day with optional caption.
+- Yoga: Log whether yoga was done and minutes practiced.
+- Water: Range slider for number of glasses.
+- Gratitude / Reflection: Text area for journaling.
+- Sleep: Numeric entry for hours slept.
+- Save button: Provides instant feedback (“Saved ✓”) with timestamp.
 
-**Why enable `checkJs` in the JS template?**
+### Entry History (History tab)
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+- View past entries in chronological order.
+- Navigate via previous/next buttons or dropdown.
+- Edit entries directly (update feelings, sleep, water, etc.).
+- Clear visual distinction between view and edit modes.
 
-**Why is HMR not preserving my local component state?**
+### Overview (Overview tab)
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+- Average sleep (with % toward sleep goal).
+- Average water intake.
+- Count of yoga days.
+- Each metric is paired with simple progress bars for at-a-glance feedback.
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+### Settings (Settings tab)
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+- Customize which activities to log (enable/disable).
+- Update personal goals (sleep hours, water glasses, yoga minutes).
+- Switch between orange and blue theme; undo option included.
+- Clear feedback when settings are saved.
+
+---
+
+## 🏗️ Implementation
+
+- **Framework**: Svelte with Vite.
+- **Structure**:
+  - App.svelte — root with tab navigation.
+  - lib/DayLog.svelte — daily logging interface.
+  - lib/EntryHistory.svelte — previous entries.
+  - lib/Overview.svelte — summaries.
+  - lib/Settings.svelte — customization & goals.
+  - lib/stores/entries.js — store with mock entries, update logic.
+  - lib/stores/preferences.js — user preferences, themes.
+- **Styling**: Custom CSS with a desktop-first layout (optimized for ~1280px width).
+- **Style Management**: Svelte stores (writable, derived) to hold entries and preferences.
+- **Data**: Mock data provided for past entries; all new logs update the same array.
+
+---
+
+## 📸 Screenshots
+
+---
+
+## 🤖 Use of AI
+AI tool (ChatGPT) was used in a limited, fair-use capacity:
+- **Strengths**: Helped debug syntax issues, structure stores, and refine accessibility (labels, placeholders). Functioned like a classmate to bounce ideas off.
+- **Limitations**: Did not generate final UI design — sketches, decisions, and customizations were mine. AI could not replace iterative feedback from peers, which directly shaped features like editable history and themes.
+- **Reflection**: Using AI accelerated coding, but careful human oversight was required to adapt the output to class goals and maintain a personal design voice.
+
+---
+
+## 🔮 Future Work
+While Levels 1-3 addressed the core features, interviews suggested additional goals that weren’t implemented yet:
+- Friend Syncing / Peer Sharing / Leaderboards
+- Cross-Device Sync
+- Additional Customization: Activity templates and User-Defined templates.
+These would extend the application to feel more social and connected, while maintaining its simple, journal-first design.
+
+--- 
+
+## 🎥 Demo Video
+
+---
+
+🔗 Links
+
+### Source Code - Github
+### Live Application
