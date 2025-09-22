@@ -9,6 +9,8 @@
   let daysSinceBeginning = 10;
   let daysActive = 7;
 
+  // Skipped David Goggin's quote TT
+
   onDestroy(() => clearInterval(timer));
 </script>
 

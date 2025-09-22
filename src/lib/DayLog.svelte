@@ -115,7 +115,7 @@
 
   <div class="actions">
     <button class="btn" on:click={saveToday} disabled={saving}>
-      {saving ? "Saving…" : "Save today"}
+      {saving ? "Locking In…" : "Carpe Diem!"}
     </button>
     {#if saved}
       <span class="ok">Saved ✓ <small class="muted">{saveTime}</small></span>
