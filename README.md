@@ -89,6 +89,10 @@ I showed early sketches and a mid-prototype to classmates. Feedback included:
 
 ## 📸 Screenshots
 
+![Today tab screenshot](assets/image-2.png)
+
+![History tab screenshot](assets/image.png)
+
 ---
 
 ## 🤖 Use of AI
