@@ -119,6 +119,8 @@ These would extend the application to feel more social and connected, while main
 
 ## 🎥 Demo Video
 
+[![Watch the video](https://img.youtube.com/vi/FRt-nXj5PY0/maxresdefault.jpg)](https://www.youtube.com/watch?v=FRt-nXj5PY0)]
+
 ---
 
 ## 🔗 Links
