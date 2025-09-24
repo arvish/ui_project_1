@@ -118,5 +118,5 @@ These would extend the application to feel more social and connected, while main
 
 ## 🔗 Links
 
-### Source Code - ![Github](https://github.com/arvish/ui_project_1)
-### ![Live Application](https://eloquent-caramel-5ff110.netlify.app/)
+### Source Code - [Github](https://github.com/arvish/ui_project_1)
+### [Live Application](https://eloquent-caramel-5ff110.netlify.app/)
