@@ -27,6 +27,11 @@ Initial sketches explored card-based layouts vs. scrolling dashboards. Based on 
   - Daily logging was designed as a single card with multiple input types (checkboxes, ranges, text, file upload).
   - Overview was simplified into three core metrics (sleep, water, yoga).
 
+![Landing Page View](assets/p1-design-d0.png)
+![History Page View](assets/p1-design-d1.png)
+![Overview Page View](assets/p1-design-d2.png)
+![Settings Page View](assets/p1-design-d3.png)
+
 - **Feedback**:
 I showed early sketches and a mid-prototype to classmates. Feedback included:
   - “Make it clear when I saved something” → added visual feedback after logging.
